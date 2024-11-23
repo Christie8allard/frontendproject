@@ -4,7 +4,13 @@ import useProject from "../hooks/use-project";
 function ProjectPage() {
     const { id } = useParams();
     const { project, isLoading, error } = useProject(id);
+    if (isLoading) {
+        return (<p>loading...</p>)
+    }
 
+    if (error) {
+        return (<p>{error.message}</p>)
+    }
     return (
     <div>
         <h2>{project.title}</h2>
