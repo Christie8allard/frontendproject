@@ -1,15 +1,17 @@
 import { useParams } from "react-router-dom";
 import useProject from "../hooks/use-project";
+import ErrorPage from "./ErrorPage";
 
 function ProjectPage() {
     const { id } = useParams();
     const { project, isLoading, error } = useProject(id);
     if (isLoading) {
         return (<p>loading...</p>)
+        
     }
 
     if (error) {
-        return (<p>{error.message}</p>)
+        return ErrorPage
     }
     return (
     <div>
