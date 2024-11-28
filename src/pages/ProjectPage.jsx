@@ -1,6 +1,6 @@
-import { useParams } from "react-router-dom";
+import { redirect, useParams } from "react-router-dom";
 import useProject from "../hooks/use-project";
-import ErrorPage from "./ErrorPage";
+import ErrorCard from "../components/ErrorCard";
 
 function ProjectPage() {
     const { id } = useParams();
@@ -9,9 +9,9 @@ function ProjectPage() {
         return (<p>loading...</p>)
         
     }
-
+// let fakeerror = true, and change Error below to fakeerror to test
     if (error) {
-        return ErrorPage
+        return <ErrorCard />
     }
     return (
     <div>

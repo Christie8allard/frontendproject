@@ -1,11 +1,20 @@
 import useProjects from "../hooks/use-projects";
 import ProjectCard from "../components/ProjectCard";
 import "../pages/HomePage.css";
-import ErrorPage from "./ErrorPage";
+
 
 function HomePage() {
-    const { projects } = useProjects();
+    const { projects, isLoading, error } = useProjects();
     // add a state/error
+    if (isLoading) {
+        return (<p>loading...</p>)
+        
+    }
+// let fakeerror = true, and change Error below to fakeerror to test
+    if (error) {
+        return <ErrorCard />
+    }
+
     if (projects.length > 0) {
         return (
             <div id="project-list">
@@ -15,7 +24,7 @@ function HomePage() {
             </div>
         );
     }
-    return ErrorPage
+    return <div>no projects to show</div>
 
 }
 
