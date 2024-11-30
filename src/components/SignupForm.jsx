@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import postUser from "../api/post-user";
+import postLogin from "../api/post-login";
 
 function SignupForm() {
     const navigate = useNavigate();
@@ -31,6 +32,7 @@ const handleSubmit = (event) => {
             credentials.first_name,
             credentials.last_name,
         ).then((response) => {
+            postLogin
             window.localStorage.setItem("token", response.token);
             console.log("token", response.token);
             navigate("/");
@@ -63,11 +65,28 @@ const handleSubmit = (event) => {
                 <input 
                     type="email"
                     id="email"
-                    placeholder="email"
+                    placeholder="Email"
                     onChange={handleChange}
                     />
             </div>
-        
+            <div>
+            <label htmlFor="first name">First Name:</label>
+                <input 
+                    type="first name"
+                    id="first name"
+                    placeholder="First name"
+                    onChange={handleChange}
+                    />
+            </div>
+            <div>
+            <label htmlFor="Last name">Last name:</label>
+                <input 
+                    type="last name"
+                    id="last name"
+                    placeholder="Last name"
+                    onChange={handleChange}
+                    />
+            </div>
             <button type="submit" onClick={handleSubmit}>
                 Sign up
             </button>
