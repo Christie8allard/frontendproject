@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import postLogin from "../api/post-login";
+import postUser from "../api/post-user";
 
 function SignupForm() {
     const navigate = useNavigate();
@@ -24,7 +24,7 @@ function SignupForm() {
 const handleSubmit = (event) => {
     event.preventDefault();
     if (credentials.username && credentials.password) {
-        postLogin(
+        postUser(
             credentials.username,
             credentials.password,
             credentials.email,
@@ -58,8 +58,18 @@ const handleSubmit = (event) => {
                     onChange={handleChange}
                 />
             </div>
+            <div>
+            <label htmlFor="email">Email:</label>
+                <input 
+                    type="email"
+                    id="email"
+                    placeholder="email"
+                    onChange={handleChange}
+                    />
+            </div>
+        
             <button type="submit" onClick={handleSubmit}>
-                Login
+                Sign up
             </button>
         </form>
     );
