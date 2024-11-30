@@ -23,7 +23,8 @@ function ProjectPage() {
             {project.pledges.map((pledgeData, key) => {
                 return (
                     <li key={key}>
-                        {pledgesData.amount} from {pledgesData.supporter}
+                        {pledgeData.amount} from {pledgesData.supporter} 
+                        //if doesn't work remove s from pledge 
                     </li>
                 );
             })}

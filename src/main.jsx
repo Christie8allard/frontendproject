@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import "./index.css";
+import LoginPage from "./pages/LoginPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       { path: "/project/:id", element: <ProjectPage /> },
       { path: "/about", element: <AboutPage />},
       { path: "/contact", element: <ContactPage />},
+      { path: "/login", element: <LoginPage />},
     ],
   },
 ]);
