@@ -6,7 +6,7 @@ function ProjectForm() {
         title: "",
         description: "",
         goal: 0,
-        image: "",
+        image: "/images/bluegem.jpg",
         isOpen: true,
         dateCreated: "",
     });
@@ -31,23 +31,22 @@ function ProjectForm() {
                     isOpen,
                     dateCreated
                 );
-                alert("Congratulations!! Your project has been created.");
+                alert("Your GemSession has been created.");
                 console.log("Project response:", response);
                 
                 setProjectData({
                     title: "",
                     description: "",
                     goal: 0,
-                    image: "",
+                    image: "/images/bluegem.jpg",
                     isOpen: true,
                     dateCreated: "",
                 });
             } catch (error) {
                 console.error("Error during project creation:", error.message);
-                // alert("Failed to create project. Please try again.");
                 }
             } else {
-                alert("Please fill in all required fields (title, description, and goal)."
+                alert("Please complete all required fields (title, description, and goal)."
                 );
             }
         };
@@ -58,7 +57,7 @@ function ProjectForm() {
                 <input
                 type="text"
                 id="title"
-                placeholder="Enter project title"
+                placeholder="What are you offering? e.g. 30mins of Python one-on-one"
                 value={projectData.title}
                 onChange={handleChange}
                 />
@@ -67,7 +66,7 @@ function ProjectForm() {
                 <label htmlFor="description">Description:</label>
                 <textarea
                 id="description"
-                placeholder="Enter project description"
+                placeholder="Tell us who you are, and some of the details"
                 value={projectData.description}
                 onChange={handleChange}
                 />
@@ -84,14 +83,15 @@ function ProjectForm() {
                 />
             </div>
             <div>
-                <label htmlFor="image">Image URL:</label>
-                <input
-                type="text"
-                id="image"
-                placeholder="Enter image URL"
-                value={projectData.image}
-                onChange={handleChange}
-                />
+            <div>
+                <label>Image:</label>
+                <img
+                src={projectData.image} // The preloaded image path
+                alt="Project preview"
+                style={{ maxWidth: "100px", display: "block", marginTop: "10px" }}
+            />
+</div>
+
                 </div>
                 <div>
                     <label htmlFor="isOpen">
