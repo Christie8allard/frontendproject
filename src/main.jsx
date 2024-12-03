@@ -11,7 +11,7 @@ import "./index.css";
 import LoginPage from "./pages/LoginPage.jsx";
 import SignupForm from "./components/SignupForm.jsx";
 import { AuthProvider } from "./components/AuthProvider.jsx";
-
+import ProjectForm from "./components/ProjectForm.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +24,7 @@ const router = createBrowserRouter([
       { path: "/contact", element: <ContactPage />},
       { path: "/login", element: <LoginPage />},
       { path: "/login", element: <SignupForm />},
+      { path: "/project", element: <ProjectForm />},
     ],
   },
 ]);

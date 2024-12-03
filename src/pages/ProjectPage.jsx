@@ -1,6 +1,8 @@
 import { redirect, useParams } from "react-router-dom";
 import useProject from "../hooks/use-project";
 import ErrorCard from "../components/ErrorCard";
+import PledgeForm from "../components/ProjectForm";
+import ProjectForm from "../components/ProjectForm";
 
 function ProjectPage() {
     const { id } = useParams();
@@ -15,6 +17,7 @@ function ProjectPage() {
     }
     return (
     <div>
+        <ProjectForm></ProjectForm>
         <h2>{project.title}</h2>
         <h3>Created at: {project.date_created}</h3>
         <h3>{`Status: ${project.is_open}`}</h3>
