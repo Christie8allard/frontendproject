@@ -17,7 +17,6 @@ function ProjectPage() {
     }
     return (
     <div>
-        <ProjectForm></ProjectForm>
         <h2>{project.title}</h2>
         <h3>Created at: {project.date_created}</h3>
         <h3>{`Status: ${project.is_open}`}</h3>

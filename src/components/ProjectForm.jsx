@@ -1,12 +1,13 @@
 import { useState } from "react";
-// import postProject from "../api/post-project.js";
+import postProject from "../api/post-project.js";
+import { useNavigate } from "react-router-dom";
 
 function ProjectForm() {
+    const navigate = useNavigate();
     const [projectData, setProjectData] = useState({
         title: "",
         description: "",
         goal: 0,
-        image: "/images/bluegem.jpg",
         isOpen: true,
         dateCreated: "",
     });
@@ -20,7 +21,7 @@ function ProjectForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const dateCreated = new Date()
-        const { title, description, goal, image, isOpen } = projectData;
+        const { title, description, goal, isOpen } = projectData;
         console.log("Final Data: ", dateCreated, projectData)
 
         if (title && description && goal > 0) {
@@ -29,7 +30,6 @@ function ProjectForm() {
                     title,
                     description,
                     goal,
-                    image,
                     isOpen,
                     dateCreated
                 );
@@ -40,10 +40,10 @@ function ProjectForm() {
                     title: "",
                     description: "",
                     goal: 0,
-                    image: "/images/bluegem.jpg",
                     isOpen: true,
                     dateCreated: "",
                 });
+                navigate(`/project/${response.id}`);
             } catch (error) {
                 console.error("Error during project creation:", error.message);
             }
@@ -84,20 +84,6 @@ function ProjectForm() {
                     onChange={handleChange}
                     min="1"
                 />
-            </div>
-            <div>
-                <div>
-                    <label>Image:</label>
-                    <img
-                        src={projectData.image} // The preloaded image path
-                        alt="Project preview"
-                        style={{
-                            maxWidth: "100px",
-                            display: "block",
-                            marginTop: "10px",
-                        }}
-                    />
-                </div>
             </div>
             <div>
                 <label htmlFor="isOpen">

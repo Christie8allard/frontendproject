@@ -12,6 +12,7 @@ import LoginPage from "./pages/LoginPage.jsx";
 import SignupForm from "./components/SignupForm.jsx";
 import { AuthProvider } from "./components/AuthProvider.jsx";
 import ProjectForm from "./components/ProjectForm.jsx";
+import CreateProjectPage from "./pages/CreateProjectPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/project/:id", element: <ProjectPage /> },
+      { path: "/create-project", element: <CreateProjectPage />},
       { path: "/about", element: <AboutPage />},
       { path: "/contact", element: <ContactPage />},
       { path: "/login", element: <LoginPage />},

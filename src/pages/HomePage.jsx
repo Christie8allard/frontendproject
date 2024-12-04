@@ -1,6 +1,7 @@
 import useProjects from "../hooks/use-projects";
 import ProjectCard from "../components/ProjectCard";
 import "../pages/HomePage.css";
+import { Link } from "react-router-dom";
 
 
 function HomePage() {
@@ -17,10 +18,13 @@ function HomePage() {
 
     if (projects.length > 0) {
         return (
+            <div>
             <div id="project-list">
                 {projects.map((projectData, key) => {
                     return <ProjectCard key={key} projectData={projectData} />;
                 })}
+            </div>
+            <Link to="/create-project">Create project</Link>
             </div>
         );
     }
