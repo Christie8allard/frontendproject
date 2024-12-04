@@ -2,7 +2,7 @@ import useProjects from "../hooks/use-projects";
 import ProjectCard from "../components/ProjectCard";
 import "../pages/HomePage.css";
 import { Link } from "react-router-dom";
-
+import ErrorCard from "../components/ErrorCard";
 
 function HomePage() {
     const { projects, isLoading, error } = useProjects();

@@ -1,8 +1,7 @@
-import { redirect, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import useProject from "../hooks/use-project";
 import ErrorCard from "../components/ErrorCard";
-import PledgeForm from "../components/ProjectForm";
-import ProjectForm from "../components/ProjectForm";
+
 
 function ProjectPage() {
     const { id } = useParams();
@@ -11,7 +10,7 @@ function ProjectPage() {
         return (<p>loading...</p>)
         
     }
-// let fakeerror = true, and change Error below to fakeerror to test
+// let fakeerror = true: and change Error below to fakeerror to test
     if (error) {
         return <ErrorCard />
     }
@@ -25,8 +24,7 @@ function ProjectPage() {
             {project.pledges.map((pledgeData, key) => {
                 return (
                     <li key={key}>
-                        {pledgeData.amount} from {pledgesData.supporter} 
-                        //if doesn't work remove s from pledge 
+                        {pledgeData.amount} from {pledgeData.supporter} 
                     </li>
                 );
             })}
