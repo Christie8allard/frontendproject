@@ -1,8 +1,32 @@
 #root {
-    font-style: Arial;
-    color: pink;
-    
+    font-family: 'Open Sans';
+    color: #580720;
 }
+body {
+    background-image: url('/images/stone.jpg'); /* Path to the marble image */
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    min-height: 100vh;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background-colour: black;
+}
+a {
+    text-decoration: none;
+    color: #333
+}
+
+a:hover {
+    text-decoration: underline pink;
+}
+
+
 h1 {
     font-size: 20px;
 }
