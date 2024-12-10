@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import useProject from "../hooks/use-project";
 import ErrorCard from "../components/ErrorCard";
+import PledgeForm from "../components/PledgeForm";
 
 
 function ProjectPage() {
@@ -29,6 +30,7 @@ function ProjectPage() {
                 );
             })}
         </ul>
+        <PledgeForm projectId={project.id}/>
     </div>
     );
 }

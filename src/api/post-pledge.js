@@ -1,6 +1,7 @@
 async function postPledge(amount, comment, isAnonymous, projectId) {
     const url = `${import.meta.env.VITE_API_URL}/pledges/`;
     const token = window.localStorage.getItem("token");
+    console.log(token)
     
     const response = await fetch(url, {
         method: "POST",
@@ -13,6 +14,7 @@ async function postPledge(amount, comment, isAnonymous, projectId) {
             comment: comment,
             anonymous: isAnonymous,
             project: projectId,
+            supporter: 1
         }),
     });
     
