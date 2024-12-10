@@ -1,7 +1,7 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import postPledge from "../api/post-pledge.js";
+import './PledgeForm.css';
 /* eslint-disable react/prop-types */
 
 function PledgeForm(props) {
@@ -51,9 +51,9 @@ function PledgeForm(props) {
         }
     };
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="amount">amount:</label>
+        <form onSubmit={handleSubmit} className="pledge-form">
+            <div className="form-group">
+                <label htmlFor="amount">Amount:</label>
                 <input
                     type="number"
                     id="amount"
@@ -61,29 +61,34 @@ function PledgeForm(props) {
                     value={pledgeData.amount}
                     onChange={handleChange}
                     min="1"
+                    className="form-input"
                 />
             </div>
-            <div>
-                <label htmlFor="comment">comment:</label>
+            <div className="form-group">
+                <label htmlFor="comment">Comment:</label>
                 <textarea
                     id="comment"
-                    placeholder="Tell us who you are, and some of the details"
+                    placeholder="Let's-a go!"
                     value={pledgeData.comment}
                     onChange={handleChange}
+                    className="form-input"
+                    rows="4"
                 />
             </div>
-            <div>
-                <label htmlFor="anonymous">anonymous:</label>
-                <input
-                    type="checkbox"
-                    id="anonymous"
-                    value={pledgeData.anonymous}
-                    onChange={handleChange}
-                />
-                Private
+            <div className="form-group checkbox-group">
+                <label htmlFor="anonymous" className="checkbox-label">
+                    <input
+                        type="checkbox"
+                        id="anonymous"
+                        checked={pledgeData.anonymous}
+                        onChange={handleChange}
+                        className="checkbox-input"
+                    />
+                    <span className="checkbox-text">Private</span>
+                </label>
             </div>
             
-            <button type="submit">Create Pledge</button>
+            <button type="submit" className="submit-button">Create Pledge</button>
         </form>
     );
 }
