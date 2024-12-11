@@ -26,6 +26,7 @@ function ProjectPage() {
                 return (
                     <li key={key}>
                         {pledgeData.amount} from {pledgeData.supporter} 
+                        <div>{pledgeData.comment}</div>
                     </li>
                 );
             })}

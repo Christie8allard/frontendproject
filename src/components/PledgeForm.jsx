@@ -24,7 +24,7 @@ function PledgeForm(props) {
         event.preventDefault();
         const { amount, comment, anonymous, } = pledgeData;
 
-        if (amount && comment && anonymous > 0) {
+        if (amount && comment) {
             try {
                 const response = await postPledge(
                     amount,
@@ -32,21 +32,21 @@ function PledgeForm(props) {
                     anonymous,
                     projectId,
                 );
-                alert("Your GemSession has been created.");
+                alert("You've pledged your Gems '.");
                 console.log("Project response:", response);
 
                 setPledgeData({
                     amount: "",
                     comment: "",
-                    anonymous: 0,
+                    anonymous: false,
                 });
-                navigate(`/project/${response.id}`);
+                navigate(0);
             } catch (error) {
                 console.error("Error during pledging", error.message);
             }
         } else {
             alert(
-                "Please complete all required fields (amount, comment, and anonymous)."
+                "Please complete all required fields (amount & comment)."
             );
         }
     };
