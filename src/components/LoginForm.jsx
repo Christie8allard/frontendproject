@@ -32,7 +32,7 @@ const handleSubmit = (event) => {
             setAuth({
                 token: response.token,
             })
-            navigate("/");
+            navigate("/deciding");
         });
     }
 }

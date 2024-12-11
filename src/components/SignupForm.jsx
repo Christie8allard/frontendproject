@@ -35,7 +35,7 @@ const handleSubmit = (event) => {
             postLogin
             window.localStorage.setItem("token", response.token);
             console.log("token", response.token);
-            navigate("/");
+            navigate("/deciding");
         });
     }
 }

@@ -13,20 +13,22 @@ import SignupForm from "./components/SignupForm.jsx";
 import { AuthProvider } from "./components/AuthProvider.jsx";
 import ProjectForm from "./components/ProjectForm.jsx";
 import CreateProjectPage from "./pages/CreateProjectPage.jsx";
+import DecidingPage from "./pages/DecidingPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <NavBar />,
     children: [
-      { path: "/", element: <HomePage /> },
+      { path: "/projects", element: <HomePage /> },
       { path: "/project/:id", element: <ProjectPage /> },
       { path: "/create-project", element: <CreateProjectPage />},
       { path: "/about", element: <AboutPage />},
       { path: "/contact", element: <ContactPage />},
+      { path: "/", element: <LoginPage />},
       { path: "/login", element: <LoginPage />},
-      { path: "/login", element: <SignupForm />},
       { path: "/project", element: <ProjectForm />},
+      { path: "/deciding", element: <DecidingPage />},
     ],
   },
 ]);
