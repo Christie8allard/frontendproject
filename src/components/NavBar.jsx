@@ -11,20 +11,24 @@ function NavBar() {
 
     return (
         <div>
-            <nav>
-                {/* Link to Home */}
-                <Link to="/">Home</Link>
-
-                {/* Conditional Rendering for Login/Logout */}
-                {auth.token ? (
-                    <Link to="/" onClick={handleLogout}>
-                        Log Out
-                    </Link>
-                ) : (
-                    <Link to="/login">Login</Link>
-                )}
-                {/* Link to Create Project */}
-                <Link to="/create-project">Create Project</Link>
+            <nav style={{ 
+                display: 'flex', 
+                justifyContent: 'space-between',
+                alignItems: 'center'
+            }}>
+                <div className="nav-links">
+                    <Link to="/create-project">Earn</Link>
+                    <Link to="/projects">Burn</Link>
+                </div>
+                <div className="auth-link">
+                    {auth.token ? (
+                        <Link to="/" onClick={handleLogout}>
+                            Log Out
+                        </Link>
+                    ) : (
+                        <Link to="/login">Login</Link>
+                    )}
+                </div>
             </nav>
             <Outlet />
         </div>

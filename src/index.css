@@ -16,6 +16,9 @@ nav {
     gap: 1rem;
     padding: 1rem;
     background-colour: black;
+    .nav-links a:first-child {
+        padding-right: 50px;
+    }
 }
 a {
     text-decoration: none;
