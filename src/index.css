@@ -1,6 +1,6 @@
 #root {
     font-family: 'Open Sans';
-    color: #580720;
+    color: #f5eff1;
 }
 body {
     background-image: url('/images/stone.jpg'); /* Path to the marble image */
@@ -15,14 +15,13 @@ nav {
     display: flex;
     gap: 1rem;
     padding: 1rem;
-    background-colour: black;
     .nav-links a:first-child {
         padding-right: 50px;
     }
 }
 a {
     text-decoration: none;
-    color: #333
+    color: #f4efef
 }
 
 a:hover {
