@@ -44,7 +44,7 @@ function ProjectForm() {
                     isOpen: true,
                     dateCreated: "",
                 });
-                navigate(`/project/${response.id}`);
+                navigate(`/projects/${response.id}`);
             } catch (error) {
                 console.error("Error during project creation:", error.message);
             }
