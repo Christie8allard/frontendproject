@@ -31,11 +31,16 @@ const handleSubmit = (event) => {
             credentials.email,
             credentials.first_name,
             credentials.last_name,
-        ).then((response) => {
-            postLogin
-            window.localStorage.setItem("token", response.token);
-            console.log("token", response.token);
-            navigate("/deciding");
+        ).then(() => {
+            postLogin(
+                credentials.username,
+                credentials.password
+            ).then((response) => {
+                console.log("Found Response: ", response)
+                window.localStorage.setItem("token", response.token);
+                console.log("token", response.token);
+                navigate("/deciding");
+            })
         });
     }
 }

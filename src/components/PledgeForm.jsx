@@ -57,7 +57,7 @@ function PledgeForm(props) {
                 <input
                     type="number"
                     id="amount"
-                    placeholder="What are you offering? e.g. 30mins of Python one-on-one"
+                    placeholder="How many gems are you pledging?"
                     value={pledgeData.amount}
                     onChange={handleChange}
                     min="1"

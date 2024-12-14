@@ -20,7 +20,7 @@ function HomePage() {
         return (
             <div>
             <div id="project-list">
-                {projects.map((projectData, key) => {
+                {projects.sort((a, b) => b.id - a.id).map((projectData, key) => {
                     return <ProjectCard key={key} projectData={projectData} />;
                 })}
             </div>
