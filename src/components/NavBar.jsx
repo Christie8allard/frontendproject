@@ -22,7 +22,7 @@ function NavBar() {
                 </div>
                 <div className="auth-link">
                     {auth.token ? (
-                        <Link to="/" onClick={handleLogout}>
+                        <Link to="/login" onClick={handleLogout}>
                             Log Out
                         </Link>
                     ) : (
