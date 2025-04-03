@@ -16,7 +16,8 @@ function NavBar() {
                 justifyContent: 'space-between',
                 alignItems: 'center'
             }}>
-                <div className="nav-links">
+                <div className="nav-links" style={{ gap: '20px', display: 'flex' }}>
+                    <Link to="/DecidingPage">Home</Link>
                     <Link to="/create-project">Earn</Link>
                     <Link to="/projects">Burn</Link>
                 </div>
@@ -36,3 +37,4 @@ function NavBar() {
 }
 
 export default NavBar;
+

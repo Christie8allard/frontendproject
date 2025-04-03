@@ -26,6 +26,7 @@ const authorisedRouter = createBrowserRouter([
       { path: "/contact", element: <ContactPage />},
       { path: "/", element: <LoginPage />},
       { path: "/project", element: <ProjectForm />},
+      { path: "/DecidingPage", element: <DecidingPage />}
     ],
   },
   { path: "/login", element: <LoginPage /> },

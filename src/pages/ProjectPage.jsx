@@ -3,6 +3,14 @@ import useProject from "../hooks/use-project";
 import ErrorCard from "../components/ErrorCard";
 import PledgeForm from "../components/PledgeForm";
 
+<div className="projects-header">
+    <h1>Discover Projects</h1>
+    <p className="projects-description">
+        Browse through our collection of innovative projects seeking support...
+    </p>
+</div>
+
+
 
 function ProjectPage() {
     const { id } = useParams();
